@@ -52,18 +52,18 @@ Since the domain (`maxsafeservices.com`) is already set up in Cloudflare:
 
 Every future `git push` to `main` auto-deploys — no manual redeploy needed.
 
-## 4. Business email (Zoho Mail — free plan)
+## 4. Business email (Zoho's free plan is India-region only — use one of these instead)
 
-1. Sign up at zoho.com/mail with `maxsafeservices.com`.
-2. Zoho will give you TXT/MX/CNAME records to verify domain ownership and route mail — add these in the Cloudflare DNS tab for the domain (same place the site's DNS records live).
-3. Create mailboxes, e.g. `info@maxsafeservices.com` (used throughout this site) and any others needed (up to 5 free).
+**Option A — $0/month:** Cloudflare Email Routing + Gmail "Send Mail As."
+1. In the Cloudflare dashboard for `maxsafeservices.com` → **Email** → **Email Routing** → enable it, verify a personal Gmail as the destination, and add `info@maxsafeservices.com` as a routed address.
+2. In Gmail → Settings → **Accounts and Import** → **Send mail as** → **Add another email address** → enter `info@maxsafeservices.com`, SMTP server `smtp.gmail.com`, port `587`, using your Gmail address + an [App Password](https://myaccount.google.com/apppasswords).
+3. Gmail sends a verification email to `info@maxsafeservices.com`, which Cloudflare forwards to your inbox — click the link to confirm.
 
-## 5. Updating the phone number once you have one
+**Option B — $19/year flat:** [Migadu](https://www.migadu.com) Micro plan — a real IMAP/SMTP mailbox (not tied to a personal Gmail), works in any mail client, nearly unlimited addresses on the domain.
 
-The phone number is currently a placeholder ("coming soon") in the header/footer contact info across **every page** (marked with `<!-- PHONE-NUMBER-PLACEHOLDER -->` in the HTML). Once you have a number:
+## 5. Phone number
 
-- Find-and-replace `<!-- PHONE-NUMBER-PLACEHOLDER --> coming soon` and `<!-- PHONE-NUMBER-PLACEHOLDER --> Coming soon — email is fastest for now` across all `.html` files with your actual number (e.g. `+1 (XXX) XXX-XXXX`).
-- Consider also adding a `telephone` field to the JSON-LD schema block in `index.html` and `contact.html` for better local SEO.
+Done — `+1 (289) 628-5722` is live in the header/footer contact info and JSON-LD schema across every page (as a clickable `tel:` link). No further action needed here.
 
 ## 6. Photos & logo
 
